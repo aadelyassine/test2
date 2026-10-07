@@ -1,774 +1,535 @@
-:root {
-  --navy: #071c2d;
-  --navy2: #0c2b43;
-  --green: #25c7a0;
-  --green-dark: #119b7b;
-  --white: #ffffff;
-  --light: #f4f8f7;
-  --text: #163044;
-  --muted: #687b88;
-  --border: #e0e9e7;
-}
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-html {
-  scroll-behavior: smooth;
-}
-
-body {
-  font-family: "DM Sans", sans-serif;
-  color: var(--text);
-  line-height: 1.6;
-}
-
-a {
-  color: inherit;
-  text-decoration: none;
-}
-
-.container {
-  width: min(1180px, 92%);
-  margin: auto;
-}
-
-
-/* HEADER */
-
-.header {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  z-index: 50;
-  color: white;
-}
-
-.nav {
-  height: 90px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.logo {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  font-family: "Manrope", sans-serif;
-  font-size: 25px;
-  font-weight: 800;
-  letter-spacing: -1px;
-}
-
-.logo-icon {
-  width: 38px;
-  height: 38px;
-  border: 2px solid var(--green);
-  border-radius: 10px;
-  display: grid;
-  place-items: center;
-  color: var(--green);
-}
-
-.green {
-  color: var(--green);
-}
-
-.nav-links {
-  display: flex;
-  gap: 36px;
-  font-size: 14px;
-}
-
-.nav-links a {
-  opacity: .9;
-}
-
-.nav-links a:hover {
-  color: var(--green);
-}
-
-.nav-button {
-  background: var(--green);
-  color: var(--navy);
-  padding: 12px 19px;
-  border-radius: 6px;
-  font-weight: 700;
-  font-size: 14px;
-}
-
-.menu-button {
-  display: none;
-  background: none;
-  border: 0;
-  color: white;
-  font-size: 28px;
-}
-
-
-/* HERO */
-
-.hero {
-  min-height: 790px;
-  position: relative;
-  overflow: hidden;
-  color: white;
-  display: flex;
-  align-items: center;
-}
-
-.hero-background {
-  position: absolute;
-  inset: 0;
-
-  background-image:
-    linear-gradient(
-      90deg,
-      rgba(3, 17, 29, .97) 0%,
-      rgba(3, 17, 29, .88) 40%,
-      rgba(3, 17, 29, .35) 100%
-    ),
-    url("https://images.unsplash.com/photo-1581578731548-c64695cc6952?auto=format&fit=crop&w=2200&q=90");
-
-  background-size: cover;
-  background-position: center;
-}
-
-.hero-container {
-  position: relative;
-  z-index: 2;
-}
-
-.hero-content {
-  max-width: 700px;
-  padding-top: 70px;
-}
-
-.eyebrow,
-.label {
-  color: var(--green);
-  font-size: 11px;
-  font-weight: 800;
-  letter-spacing: 2.2px;
-}
-
-.eyebrow {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  margin-bottom: 22px;
-}
-
-.eyebrow span {
-  width: 35px;
-  height: 2px;
-  background: var(--green);
-}
-
-.hero h1 {
-  font-family: "Manrope", sans-serif;
-  font-size: clamp(58px, 7vw, 92px);
-  line-height: .98;
-  letter-spacing: -5px;
-  margin-bottom: 30px;
-}
-
-.hero h1 span {
-  color: var(--green);
-}
-
-.hero p {
-  max-width: 560px;
-  font-size: 19px;
-  color: #d7e2e8;
-  margin-bottom: 35px;
-}
-
-.hero-buttons {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 13px;
-}
-
-.button {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 14px;
-  padding: 15px 23px;
-  border-radius: 6px;
-  border: 0;
-  font-family: inherit;
-  font-size: 14px;
-  font-weight: 700;
-  cursor: pointer;
-  transition: .25s;
-}
-
-.button:hover {
-  transform: translateY(-3px);
-}
-
-.primary {
-  background: var(--green);
-  color: var(--navy);
-}
-
-.secondary {
-  color: white;
-  border: 1px solid rgba(255,255,255,.4);
-}
-
-.hero-stats {
-  display: flex;
-  gap: 45px;
-  margin-top: 65px;
-}
-
-.hero-stats div {
-  display: flex;
-  flex-direction: column;
-}
-
-.hero-stats strong {
-  font-size: 17px;
-}
-
-.hero-stats span {
-  font-size: 11px;
-  color: #aebdc6;
-}
-
-.scroll-down {
-  position: absolute;
-  bottom: 30px;
-  left: 50%;
-  color: var(--green);
-  font-size: 25px;
-}
-
-
-/* INTRO */
-
-.intro {
-  padding: 120px 0;
-}
-
-.intro-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 100px;
-  align-items: end;
-}
-
-h2 {
-  font-family: "Manrope", sans-serif;
-  font-size: clamp(38px, 4vw, 58px);
-  line-height: 1.08;
-  letter-spacing: -2.5px;
-  margin-top: 17px;
-}
-
-h2 span {
-  color: var(--green-dark);
-}
-
-.intro-text p {
-  color: var(--muted);
-  font-size: 18px;
-  margin-bottom: 25px;
-}
-
-.arrow-link {
-  font-weight: 700;
-}
-
-.arrow-link span {
-  color: var(--green-dark);
-}
-
-
-/* SERVICES */
-
-.services {
-  background: var(--light);
-  padding: 110px 0;
-}
-
-.section-top {
-  display: flex;
-  justify-content: space-between;
-  align-items: end;
-  gap: 60px;
-  margin-bottom: 50px;
-}
-
-.section-top > p {
-  max-width: 420px;
-  color: var(--muted);
-}
-
-.services-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 17px;
-}
-
-.service-card {
-  position: relative;
-  min-height: 400px;
-  padding: 30px;
-  background: white;
-  border: 1px solid var(--border);
-  border-radius: 10px;
-  transition: .3s;
-}
-
-.service-card:hover {
-  transform: translateY(-7px);
-  box-shadow: 0 20px 50px rgba(7, 28, 45, .08);
-}
-
-.service-card.dark {
-  background: var(--navy);
-  color: white;
-}
-
-.service-top {
-  display: flex;
-  justify-content: space-between;
-  align-items: start;
-}
-
-.service-top > span {
-  font-size: 12px;
-  opacity: .45;
-}
-
-.service-icon {
-  font-size: 34px;
-}
-
-.service-card h3 {
-  font-family: "Manrope", sans-serif;
-  font-size: 22px;
-  margin-top: 55px;
-  margin-bottom: 14px;
-}
-
-.service-card p {
-  color: var(--muted);
-  font-size: 14px;
-}
-
-.dark p {
-  color: #b6c6ce;
-}
-
-.service-card a {
-  position: absolute;
-  bottom: 28px;
-  color: var(--green-dark);
-  font-weight: 700;
-  font-size: 13px;
-}
-
-.dark a {
-  color: var(--green);
-}
-
-
-/* ABOUT */
-
-.about {
-  padding: 120px 0;
-}
-
-.about-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 100px;
-  align-items: center;
-}
-
-.about-image {
-  position: relative;
-}
-
-.about-photo {
-  height: 600px;
-  border-radius: 12px;
-  background:
-    linear-gradient(
-      rgba(7, 28, 45, .15),
-      rgba(7, 28, 45, .25)
-    ),
-    url("https://images.unsplash.com/photo-1527515637462-cff94eecc1ac?auto=format&fit=crop&w=1200&q=90")
-    center / cover;
-}
-
-.about-badge {
-  position: absolute;
-  bottom: 30px;
-  right: -25px;
-  background: var(--green);
-  color: var(--navy);
-  padding: 22px 27px;
-  border-radius: 9px;
-  display: flex;
-  align-items: center;
-  gap: 13px;
-}
-
-.about-badge strong {
-  font-size: 34px;
-  font-family: "Manrope";
-}
-
-.about-badge span {
-  font-size: 12px;
-  font-weight: 700;
-}
-
-.about-content > p {
-  color: var(--muted);
-  font-size: 17px;
-  margin: 25px 0 35px;
-}
-
-.benefits {
-  display: grid;
-  gap: 22px;
-}
-
-.benefit {
-  display: flex;
-  gap: 14px;
-}
-
-.check {
-  width: 31px;
-  height: 31px;
-  flex-shrink: 0;
-  display: grid;
-  place-items: center;
-  border-radius: 50%;
-  background: #e0f8f2;
-  color: var(--green-dark);
-  font-weight: 800;
-}
-
-.benefit h4 {
-  margin-bottom: 2px;
-}
-
-.benefit p {
-  color: var(--muted);
-  font-size: 13px;
-}
-
-
-/* WORK AREA */
-
-.work-area {
-  background: var(--navy);
-  color: white;
-  padding: 115px 0;
-  text-align: center;
-}
-
-.work-content {
-  max-width: 850px;
-  margin: auto;
-}
-
-.work-content > p {
-  max-width: 600px;
-  margin: 25px auto 0;
-  color: #b7c6ce;
-}
-
-.cities {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 10px;
-  margin-top: 40px;
-}
-
-.cities span {
-  border: 1px solid rgba(255,255,255,.17);
-  border-radius: 100px;
-  padding: 9px 17px;
-  font-size: 13px;
-  color: #d5e0e5;
-}
-
-
-/* CTA */
-
-.cta {
-  padding: 80px 0;
-}
-
-.cta-box {
-  background: var(--green);
-  padding: 65px 70px;
-  border-radius: 14px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 40px;
-}
-
-.cta-box h2 {
-  color: var(--navy);
-}
-
-.cta-box h2 span {
-  color: white;
-}
-
-.cta-box p {
-  color: #245b53;
-  margin-top: 15px;
-}
-
-.dark-button {
-  background: var(--navy);
-  color: white;
-  white-space: nowrap;
-}
-
-
-/* CONTACT */
-
-.contact {
-  background: var(--light);
-  padding: 110px 0;
-}
-
-.contact-grid {
-  display: grid;
-  grid-template-columns: .9fr 1.1fr;
-  gap: 100px;
-}
-
-.contact-info > p {
-  color: var(--muted);
-  font-size: 17px;
-  margin: 25px 0 35px;
-}
-
-.contact-item {
-  display: flex;
-  gap: 15px;
-  align-items: center;
-  margin-bottom: 20px;
-}
-
-.contact-item > span {
-  width: 45px;
-  height: 45px;
-  display: grid;
-  place-items: center;
-  background: white;
-  border-radius: 8px;
-}
-
-.contact-item small {
-  display: block;
-  color: var(--muted);
-}
-
-.contact-item strong {
-  font-size: 14px;
-}
-
-
-/* FORM */
-
-.contact-form {
-  background: white;
-  padding: 40px;
-  border-radius: 12px;
-  box-shadow: 0 15px 50px rgba(7, 28, 45, .05);
-  display: grid;
-  gap: 14px;
-}
-
-.contact-form input,
-.contact-form select,
-.contact-form textarea {
-  width: 100%;
-  border: 1px solid var(--border);
-  border-radius: 6px;
-  padding: 15px;
-  outline: none;
-  font-family: inherit;
-}
-
-.contact-form input:focus,
-.contact-form select:focus,
-.contact-form textarea:focus {
-  border-color: var(--green);
-}
-
-#formMessage {
-  color: var(--green-dark);
-  font-size: 13px;
-  font-weight: 700;
-}
-
-
-/* FOOTER */
-
-footer {
-  background: #04131f;
-  color: white;
-  padding: 75px 0 25px;
-}
-
-.footer-grid {
-  display: grid;
-  grid-template-columns: 1.5fr 1fr 1fr 1fr;
-  gap: 50px;
-  padding-bottom: 60px;
-}
-
-.footer-brand p {
-  color: #81929d;
-  max-width: 300px;
-  margin-top: 20px;
-  font-size: 14px;
-}
-
-footer h4 {
-  margin-bottom: 20px;
-}
-
-.footer-grid > div:not(:first-child) a,
-.footer-grid > div:not(:first-child) span {
-  display: block;
-  color: #81929d;
-  font-size: 14px;
-  margin: 9px 0;
-}
-
-.footer-grid a:hover {
-  color: var(--green);
-}
-
-.copyright {
-  border-top: 1px solid rgba(255,255,255,.08);
-  padding-top: 25px;
-  color: #637580;
-  font-size: 12px;
-}
-
-
-/* MOBILE */
-
-.mobile-menu {
-  display: none;
-}
-
-@media (max-width: 1000px) {
-
-  .nav-links,
-  .nav-button {
-    display: none;
-  }
-
-  .menu-button {
-    display: block;
-  }
-
-  .mobile-menu {
-    position: fixed;
-    display: flex;
-    flex-direction: column;
-    gap: 25px;
-    top: 0;
-    right: -100%;
-    width: 290px;
-    height: 100vh;
-    background: var(--navy);
-    color: white;
-    padding: 100px 30px;
-    z-index: 100;
-    transition: .3s;
-  }
-
-  .mobile-menu.active {
-    right: 0;
-  }
-
-  .services-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .about-grid,
-  .contact-grid,
-  .intro-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .footer-grid {
-    grid-template-columns: 1fr 1fr;
-  }
-}
-
-
-@media (max-width: 650px) {
-
-  .hero {
-    min-height: 730px;
-  }
-
-  .hero h1 {
-    font-size: 58px;
-    letter-spacing: -3px;
-  }
-
-  .hero-stats {
-    gap: 20px;
-    flex-wrap: wrap;
-  }
-
-  .section-top {
-    flex-direction: column;
-    align-items: start;
-  }
-
-  .services-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .about-photo {
-    height: 450px;
-  }
-
-  .about-badge {
-    right: 10px;
-  }
-
-  .cta-box {
-    padding: 40px 30px;
-    flex-direction: column;
-    align-items: start;
-  }
-
-  .contact-form {
-    padding: 25px;
-  }
-
-  .footer-grid {
-    grid-template-columns: 1fr;
-  }
-}
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Diensten | NOVA Cleaning Services</title>
+
+  <meta name="description"
+    content="Bekijk alle schoonmaakdiensten van NOVA Cleaning Services voor kantoren en woningen in Noord-Brabant.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+
+  <style>
+
+    .page-hero {
+      min-height: 500px;
+      background:
+        linear-gradient(90deg, rgba(4,18,31,.95), rgba(4,18,31,.55)),
+        url("https://images.unsplash.com/photo-1581578731548-c64695cc6952?auto=format&fit=crop&w=2200&q=90")
+        center / cover;
+      color: white;
+      display: flex;
+      align-items: center;
+      padding-top: 80px;
+    }
+
+    .page-hero-content {
+      max-width: 750px;
+    }
+
+    .page-hero h1 {
+      font-family: "Manrope", sans-serif;
+      font-size: clamp(50px, 7vw, 78px);
+      line-height: 1;
+      letter-spacing: -4px;
+      margin: 20px 0;
+    }
+
+    .page-hero h1 span {
+      color: var(--green);
+    }
+
+    .page-hero p {
+      max-width: 600px;
+      color: #d5e0e5;
+      font-size: 18px;
+    }
+
+    .services-page {
+      padding: 110px 0;
+    }
+
+    .service-detail {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      min-height: 480px;
+      margin-bottom: 35px;
+      border-radius: 14px;
+      overflow: hidden;
+      background: var(--light);
+    }
+
+    .service-detail:nth-child(even) {
+      direction: rtl;
+    }
+
+    .service-detail:nth-child(even) > * {
+      direction: ltr;
+    }
+
+    .service-detail-image {
+      min-height: 480px;
+      background-size: cover;
+      background-position: center;
+    }
+
+    .office-image {
+      background-image:
+        linear-gradient(rgba(7,28,45,.15),rgba(7,28,45,.15)),
+        url("https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&w=1200&q=90");
+    }
+
+    .window-image {
+      background-image:
+        linear-gradient(rgba(7,28,45,.1),rgba(7,28,45,.1)),
+        url("https://images.unsplash.com/photo-1527515637462-cff94eecc1ac?auto=format&fit=crop&w=1200&q=90");
+    }
+
+    .home-image {
+      background-image:
+        linear-gradient(rgba(7,28,45,.1),rgba(7,28,45,.1)),
+        url("https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=1200&q=90");
+    }
+
+    .deep-image {
+      background-image:
+        linear-gradient(rgba(7,28,45,.1),rgba(7,28,45,.1)),
+        url("https://images.unsplash.com/photo-1581579185169-4c6c3f7f4f70?auto=format&fit=crop&w=1200&q=90");
+    }
+
+    .service-detail-content {
+      padding: 65px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .service-detail-number {
+      color: var(--green-dark);
+      font-weight: 800;
+      font-size: 13px;
+      letter-spacing: 2px;
+      margin-bottom: 20px;
+    }
+
+    .service-detail h2 {
+      margin: 0 0 20px;
+    }
+
+    .service-detail p {
+      color: var(--muted);
+      font-size: 16px;
+      max-width: 500px;
+    }
+
+    .service-list {
+      margin-top: 25px;
+      display: grid;
+      gap: 10px;
+    }
+
+    .service-list div {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    .service-list span {
+      color: var(--green-dark);
+      font-weight: 800;
+    }
+
+    .service-detail-button {
+      margin-top: 30px;
+      width: fit-content;
+    }
+
+    @media(max-width: 750px) {
+
+      .service-detail,
+      .service-detail:nth-child(even) {
+        grid-template-columns: 1fr;
+        direction: ltr;
+      }
+
+      .service-detail-image {
+        min-height: 300px;
+      }
+
+      .service-detail-content {
+        padding: 40px 28px;
+      }
+
+    }
+
+  </style>
+</head>
+
+<body>
+
+<header class="header">
+  <div class="container nav">
+
+    <a href="index.html" class="logo">
+      <span class="logo-icon">N</span>
+      <span>NOVA<span class="green">.</span></span>
+    </a>
+
+    <nav class="nav-links">
+      <a href="diensten.html">Diensten</a>
+      <a href="index.html#over-ons">Over ons</a>
+      <a href="index.html#werkgebied">Werkgebied</a>
+      <a href="index.html#contact">Contact</a>
+    </nav>
+
+    <a href="index.html#offerte" class="nav-button">
+      Offerte aanvragen
+    </a>
+
+  </div>
+</header>
+
+
+<!-- HERO -->
+
+<section class="page-hero">
+
+  <div class="container page-hero-content">
+
+    <div class="label">ONZE DIENSTEN</div>
+
+    <h1>
+      Schoonmaak voor
+      <span>elke situatie.</span>
+    </h1>
+
+    <p>
+      Van kantoren en bedrijfspanden tot woningen.
+      NOVA Cleaning Services zorgt voor een schone,
+      frisse en verzorgde omgeving.
+    </p>
+
+  </div>
+
+</section>
+
+
+<!-- SERVICES -->
+
+<section class="services-page">
+
+  <div class="container">
+
+
+    <!-- KANTOOR -->
+
+    <article class="service-detail">
+
+      <div class="service-detail-image office-image"></div>
+
+      <div class="service-detail-content">
+
+        <div class="service-detail-number">01 — BEDRIJVEN</div>
+
+        <h2>
+          Kantoorschoonmaak
+        </h2>
+
+        <p>
+          Een schone werkplek draagt bij aan een prettige,
+          professionele en gezonde werkomgeving.
+          Wij zorgen ervoor dat uw kantoor er verzorgd uitziet.
+        </p>
+
+        <div class="service-list">
+
+          <div>
+            <span>✓</span>
+            Werkplekken en bureaus
+          </div>
+
+          <div>
+            <span>✓</span>
+            Keuken en gemeenschappelijke ruimtes
+          </div>
+
+          <div>
+            <span>✓</span>
+            Sanitaire ruimtes
+          </div>
+
+          <div>
+            <span>✓</span>
+            Stofzuigen en dweilen
+          </div>
+
+        </div>
+
+        <a href="index.html#offerte"
+           class="button primary service-detail-button">
+          Offerte aanvragen →
+        </a>
+
+      </div>
+
+    </article>
+
+
+    <!-- RAMEN -->
+
+    <article class="service-detail">
+
+      <div class="service-detail-image window-image"></div>
+
+      <div class="service-detail-content">
+
+        <div class="service-detail-number">02 — RAMEN</div>
+
+        <h2>
+          Glasbewassing
+        </h2>
+
+        <p>
+          Schone ramen geven uw woning of bedrijfspand
+          direct een frisse en professionele uitstraling.
+        </p>
+
+        <div class="service-list">
+
+          <div>
+            <span>✓</span>
+            Ramen binnen en buiten
+          </div>
+
+          <div>
+            <span>✓</span>
+            Glas en kozijnen
+          </div>
+
+          <div>
+            <span>✓</span>
+            Periodieke glasbewassing
+          </div>
+
+          <div>
+            <span>✓</span>
+            Particulieren en bedrijven
+          </div>
+
+        </div>
+
+        <a href="index.html#offerte"
+           class="button primary service-detail-button">
+          Offerte aanvragen →
+        </a>
+
+      </div>
+
+    </article>
+
+
+    <!-- WONING -->
+
+    <article class="service-detail">
+
+      <div class="service-detail-image home-image"></div>
+
+      <div class="service-detail-content">
+
+        <div class="service-detail-number">03 — PARTICULIEREN</div>
+
+        <h2>
+          Woning schoonmaak
+        </h2>
+
+        <p>
+          Geen tijd voor het schoonmaken van uw woning?
+          Wij nemen het werk uit handen en zorgen voor
+          een frisse en aangename leefomgeving.
+        </p>
+
+        <div class="service-list">
+
+          <div>
+            <span>✓</span>
+            Woningen en appartementen
+          </div>
+
+          <div>
+            <span>✓</span>
+            Keuken en badkamer
+          </div>
+
+          <div>
+            <span>✓</span>
+            Stofzuigen en dweilen
+          </div>
+
+          <div>
+            <span>✓</span>
+            Eenmalig of periodiek
+          </div>
+
+        </div>
+
+        <a href="index.html#offerte"
+           class="button primary service-detail-button">
+          Offerte aanvragen →
+        </a>
+
+      </div>
+
+    </article>
+
+
+    <!-- DIEPTEREINIGING -->
+
+    <article class="service-detail">
+
+      <div class="service-detail-image deep-image"></div>
+
+      <div class="service-detail-content">
+
+        <div class="service-detail-number">04 — GRONDIG</div>
+
+        <h2>
+          Dieptereiniging
+        </h2>
+
+        <p>
+          Voor ruimtes die extra aandacht nodig hebben.
+          Onze dieptereiniging gaat verder dan de dagelijkse
+          schoonmaak.
+        </p>
+
+        <div class="service-list">
+
+          <div>
+            <span>✓</span>
+            Grondige reiniging
+          </div>
+
+          <div>
+            <span>✓</span>
+            Keuken en sanitaire ruimtes
+          </div>
+
+          <div>
+            <span>✓</span>
+            Moeilijk bereikbare plaatsen
+          </div>
+
+          <div>
+            <span>✓</span>
+            Eenmalige reiniging mogelijk
+          </div>
+
+        </div>
+
+        <a href="index.html#offerte"
+           class="button primary service-detail-button">
+          Offerte aanvragen →
+        </a>
+
+      </div>
+
+    </article>
+
+  </div>
+
+</section>
+
+
+<!-- CTA -->
+
+<section class="cta">
+
+  <div class="container cta-box">
+
+    <div>
+
+      <div class="label">VRIJBLIJVENDE OFFERTE</div>
+
+      <h2>
+        Uw schoonmaak,
+        <span>onze zorg.</span>
+      </h2>
+
+      <p>
+        Neem vandaag nog contact met ons op.
+      </p>
+
+    </div>
+
+    <a href="index.html#contact"
+       class="button dark-button">
+      Neem contact op →
+    </a>
+
+  </div>
+
+</section>
+
+
+<footer>
+
+  <div class="container footer-grid">
+
+    <div class="footer-brand">
+
+      <a href="index.html" class="logo">
+        <span class="logo-icon">N</span>
+        <span>NOVA<span class="green">.</span></span>
+      </a>
+
+      <p>
+        Professionele schoonmaak voor woningen
+        en bedrijven in Noord-Brabant.
+      </p>
+
+    </div>
+
+    <div>
+      <h4>Navigatie</h4>
+      <a href="index.html">Home</a>
+      <a href="diensten.html">Diensten</a>
+      <a href="index.html#over-ons">Over ons</a>
+      <a href="index.html#contact">Contact</a>
+    </div>
+
+    <div>
+      <h4>Diensten</h4>
+      <a href="#">Kantoorschoonmaak</a>
+      <a href="#">Glasbewassing</a>
+      <a href="#">Woning schoonmaak</a>
+      <a href="#">Dieptereiniging</a>
+    </div>
+
+    <div>
+      <h4>Contact</h4>
+      <a href="tel:+31600000000">06 00 00 00 00</a>
+      <a href="mailto:info@novacleaning.nl">
+        info@novacleaning.nl
+      </a>
+      <span>Noord-Brabant, Nederland</span>
+    </div>
+
+  </div>
+
+  <div class="container copyright">
+    © 2026 NOVA Cleaning Services. Alle rechten voorbehouden.
+  </div>
+
+</footer>
+
+</body>
+</html>
