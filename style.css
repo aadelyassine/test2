@@ -1628,3 +1628,63 @@ body {
     align-items: flex-start;
   }
 }
+/* Final visual adjustments */
+
+/* Reduce empty space in the Why Nova section */
+.trust-grid {
+  margin-top: 24px;
+  margin-bottom: 24px;
+}
+
+.section-heading {
+  margin-bottom: 28px;
+}
+
+/* Keep the quote button text on one line */
+.nav-actions .btn {
+  white-space: nowrap;
+  min-width: max-content;
+  padding: 13px 20px;
+}
+
+/* Improve footer layout */
+.footer-grid {
+  align-items: start;
+  column-gap: 48px;
+  row-gap: 32px;
+}
+
+.footer-logo {
+  display: inline-block;
+  font-size: 25px;
+  line-height: 1.3;
+  margin-bottom: 16px;
+}
+
+.footer-grid p {
+  line-height: 1.7;
+  overflow-wrap: anywhere;
+}
+
+/* Make footer columns more balanced */
+.footer-grid > div {
+  min-width: 0;
+}
+
+.footer-grid h3 {
+  margin-top: 0;
+  margin-bottom: 24px;
+}
+
+/* Mobile adjustments */
+@media (max-width: 600px) {
+  .nav-actions .btn {
+    padding: 10px 12px;
+    font-size: 12px;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+}
