@@ -1688,3 +1688,19 @@ body {
     gap: 28px;
   }
 }
+.footer-logo {
+  display: inline-flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 8px;
+  font-size: 25px;
+  font-weight: 800;
+  line-height: 1.4;
+  text-decoration: none;
+  color: #ffffff;
+}
+
+.footer-logo span {
+  display: inline;
+  color: #25c7a0;
+}
